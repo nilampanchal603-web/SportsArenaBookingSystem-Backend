@@ -56,8 +56,8 @@ const verifyPayment = async (req, res) => {
                 paymentStatus: "success",
             });
 
-            // Update booking status to paid
-            await bookingSchema.findByIdAndUpdate(bookingId, { status: "paid" });
+            // Update booking payment status to paid
+            await bookingSchema.findByIdAndUpdate(bookingId, { paymentStatus: "paid" });
 
             res.status(200).json({ message: "Payment verified successfully", data: savePayment });
         } else {

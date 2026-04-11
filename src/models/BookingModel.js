@@ -47,6 +47,12 @@ const bookingSchema = new Schema({
         ref: "coach"
     },
 
+    paymentStatus: {
+        type: String,
+        enum: ["pending", "paid"],
+        default: "pending"
+    },
+
     totalAmount: {
         type: Number,
         required: true
